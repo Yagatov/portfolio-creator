@@ -347,6 +347,11 @@ a {
 }
 .projects__carts {
     display: flex;
+
+    /* for slider */
+    position: relative;
+    left: 0;
+    transition: left .4s ease-in-out;
 }
 .projects__carts-item {
     margin-right: 24.5px;
@@ -689,6 +694,33 @@ a {
 .testimonial__carts-item {
     display: flex;
     align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+}
+
+.testimonial__carts-active {
+    position: static;
+    display: flex;
+    transition: all .3s ease;
+}
+
+.testimonial__carts-active p, .testimonial__carts-active img {
+    animation: slider .9s;
+}
+@keyframes slider {
+    0% {
+        transform: translateY(-30px);
+        opacity: 0%;
+    }
+    40% {
+        opacity: 60%;
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 .testimonial__carts-image {
     margin-right: 146px;
